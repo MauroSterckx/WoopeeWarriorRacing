@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1715091108",
+        "python_version": "3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\vande\\anaconda3\\envs\\VR\\Scripts\\mlagents-learn config/CarAgent.yaml --run-id=CarAgent",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1715091115"
+    },
+    "total": 7.3115275,
+    "count": 1,
+    "self": 0.011902500000000593,
+    "children": {
+        "run_training.setup": {
+            "total": 0.09128139999999996,
+            "count": 1,
+            "self": 0.09128139999999996
+        },
+        "TrainerController.start_learning": {
+            "total": 7.2083436,
+            "count": 1,
+            "self": 0.00010760000000065162,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 7.2082125999999995,
+                    "count": 1,
+                    "self": 7.2082125999999995
+                },
+                "TrainerController._save_models": {
+                    "total": 2.3399999999895726e-05,
+                    "count": 1,
+                    "self": 2.3399999999895726e-05
+                }
+            }
+        }
+    }
+}
