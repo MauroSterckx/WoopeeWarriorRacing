@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: F1 Blue 2 Body 2
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: d5b9a673ea798ac4cb5fcc40d89862cc, type: 2}
+  m_Name: F1 Red Body
+  m_Shader: {fileID: 22, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -23,12 +23,19 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Cube:
+        m_Texture: {fileID: 8900000, guid: f22c6abd360bdc045a9df9b7a7d3d5cc, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 616fe6ff0aac6f54591dbf013f3c9ce6, type: 3}
+        m_Texture: {fileID: 2800000, guid: c1d9460252d96b848b08fb42257e352a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Shininess: 0.25654158
     m_Colors:
-    - _Color: {r: 0.59120893, g: 0.6272, b: 0.99264705, a: 1}
+    - _Color: {r: 0.9558824, g: 0.19679932, b: 0.19679932, a: 1}
+    - _ReflectColor: {r: 0.3455882, g: 0.3455882, b: 0.3455882, a: 0.5019608}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_BuildTextureStacks: []
