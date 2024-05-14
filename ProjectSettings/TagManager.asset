@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WALL
   - FLOOR
+  - wp
   layers:
   - Default
   - TransparentFX
