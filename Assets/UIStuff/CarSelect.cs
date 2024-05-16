@@ -18,7 +18,9 @@ public class CarSelect : MonoBehaviour
     public string USERNAME;
     public TMP_Text textMeshProText;
     public TMP_Text inputText;
-//    public InputField inputField;
+
+    public TMP_InputField inputField;
+    public TextMeshProUGUI outputText;
 
     void Start()
     {
@@ -50,9 +52,13 @@ public class CarSelect : MonoBehaviour
         prefabsToToggle[activePrefabIndex].SetActive(true);
     }
 
-    public void SetName()
+    // Methode om de ingevoerde tekst uit te lezen
+    public void ReadInputFieldValue()
     {
-        //string inputText = inputText
-        //textMeshProText.text = inputText;
+        string inputText = inputField.text;
+        Debug.Log("Ingevoerde tekst: " + inputText);
+
+        // Pas de tekst van de uitvoer TextMeshPro Text UI-component aan
+        outputText.text = inputText;
     }
 }
