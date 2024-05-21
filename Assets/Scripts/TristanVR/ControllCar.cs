@@ -55,18 +55,15 @@ public class ControllCar : MonoBehaviour
         // Assuming inputManager has been properly set up with the corresponding input actions
         float acceleration = inputManager.actions["Acceleration"].ReadValue<float>();
         float steering = inputManager.actions["Steering"].ReadValue<float>();
-        float wheelDamping = inputManager.actions["WheelDamping"].ReadValue<float>();
 
         foreach (WheelCollider wheel in throttleWheels)
         {
             wheel.motorTorque = strengthCoefficient * acceleration * Time.deltaTime;
-            wheel.wheelDampingRate = wheelDamping;
         }
 
         foreach (WheelCollider wheel in steeringWheels)
         {
             wheel.steerAngle = maxTurn * steering;
-            wheel.wheelDampingRate = wheelDamping;
         }
     }
 }
