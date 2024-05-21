@@ -89,7 +89,7 @@ MonoBehaviour:
   - {fileID: 2741667377220594283}
   - {fileID: -2340512692017230152}
   - {fileID: 3978902576296106707}
-  - {fileID: -2835604019171875218}
+  - {fileID: 7162468625646896375}
   - {fileID: -5643744589241800105}
   m_renderMode: 1
   m_depthSubmissionMode: 0
@@ -383,11 +383,11 @@ MonoBehaviour:
   m_Name: RuntimeDebuggerOpenXRFeature Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
-  nameUi: 
-  version: 
-  featureIdInternal: 
+  nameUi: Runtime Debugger
+  version: 1
+  featureIdInternal: com.unity.openxr.features.runtimedebugger
   openxrExtensionStrings: 
-  company: 
+  company: Unity
   priority: 0
   required: 0
   cacheSize: 1048576
