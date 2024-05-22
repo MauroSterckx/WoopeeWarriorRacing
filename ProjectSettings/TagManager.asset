@@ -7,6 +7,9 @@ TagManager:
   - WALL
   - FLOOR
   - wp
+  - RoomLight
+  - SamplesInfoPanel
+  - Car
   layers:
   - Default
   - TransparentFX
