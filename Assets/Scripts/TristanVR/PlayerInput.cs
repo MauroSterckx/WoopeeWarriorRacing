@@ -1,78 +1,98 @@
 using UnityEngine;
 
-public class playerinputcar : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
     public float Acceleration
     {
         get { return m_Acceleration; }
     }
-
     public float Steering
     {
         get { return m_Steering; }
     }
+    public float Reverse
+    {
+        get { return m_Reverse; }
+    }
 
-    private float m_Acceleration;
-    private float m_Steering;
+    float m_Acceleration;
+    float m_Steering;
+    float m_Reverse;
+
+    bool m_FixedUpdateHappend;
 
     private bool accelerating = false;
+    private bool reversing = false;
     private bool breaking = false;
     private bool turningLeft = false;
     private bool turningRight = false;
 
-    void Update()
+    public float wheelDampening;
+
+    private void Update()
     {
         GetPlayerInput();
 
         if (accelerating)
         {
             m_Acceleration = 1f;
-            // Extra functionaliteit indien nodig
+            wheelDampening = 500f;
         }
         else if (breaking)
         {
             m_Acceleration = -0.5f;
-            // Extra functionaliteit indien nodig
+            wheelDampening = 10000f;
+        }
+        else if (reversing)
+        {
+            m_Reverse = 1f;
+            wheelDampening = 500f;
         }
         else
         {
             m_Acceleration = 0f;
-            // Extra functionaliteit indien nodig
+            wheelDampening = 5f;
         }
 
         if (turningLeft)
         {
             m_Steering = -1f;
-            // Extra functionaliteit indien nodig
+
         }
         else if (!turningLeft && turningRight)
         {
             m_Steering = 1f;
-            // Extra functionaliteit indien nodig
         }
         else
         {
             m_Steering = 0f;
-            // Extra functionaliteit indien nodig
         }
     }
-
     private void GetPlayerInput()
     {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
         {
             accelerating = true;
         }
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
         {
             accelerating = false;
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
+        {
+            reversing = true;
+        }
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
+        {
+            reversing = false;
         }
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstickDown, OVRInput.Controller.RTouch))
         {
             breaking = true;
         }
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstickDown, OVRInput.Controller.RTouch))
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstickDown, OVRInput.Controller.RTouch))
         {
             breaking = false;
         }
@@ -81,7 +101,7 @@ public class playerinputcar : MonoBehaviour
         {
             turningLeft = true;
         }
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.RTouch))
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.RTouch))
         {
             turningLeft = false;
         }
@@ -90,7 +110,7 @@ public class playerinputcar : MonoBehaviour
         {
             turningRight = true;
         }
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.RTouch))
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.RTouch))
         {
             turningRight = false;
         }

@@ -1,37 +1,3 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.InputSystem;
-
-// public class ControllCar : MonoBehaviour
-// {
-//     private PlayerInput inputmanager;
-//     public List<WheelCollider> throttleWheels;
-//     public List<WheelCollider> steeringWheels;
-//     public float strengthCoefficient = 200000f
-//     public float maxTurn = 20f;
-
-//     void Start()
-//     {
-//         inputmanager = GetComponent<PlayerInput>();
-//     }
-
-//     void FixedUpdate()
-//     {
-//         foreach (WheelCollider wheel in throttleWheels)
-//         {
-//             wheel.motorTorque = strengthCoefficient * Time.deltaTime * inputmanager.Acceleration;
-//             wheel.wheelDampingRate = inputmanager.wheelDamping;
-//         }
-
-//         foreach (WheelCollider wheel in steeringWheels)
-//         {
-//             wheel.steerAngle = maxTurn * inputmanager.Steering;
-//             wheel.wheelDampingRate = inputmanager.wheelDamping
-//         }
-//     }
-// }
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,9 +5,11 @@ using UnityEngine.InputSystem;
 
 public class ControllCar : MonoBehaviour
 {
+
     private PlayerInput inputManager;
     public List<WheelCollider> throttleWheels;
     public List<WheelCollider> steeringWheels;
+    public float speed = 1200f;
     public float strengthCoefficient = 200000f;
     public float maxTurn = 20f;
 
@@ -52,18 +20,24 @@ public class ControllCar : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Assuming inputManager has been properly set up with the corresponding input actions
-        float acceleration = inputManager.actions["Acceleration"].ReadValue<float>();
-        float steering = inputManager.actions["Steering"].ReadValue<float>();
-
         foreach (WheelCollider wheel in throttleWheels)
         {
-            wheel.motorTorque = strengthCoefficient * acceleration * Time.deltaTime;
+            if (inputManager.Acceleration > 0)
+            {
+                wheel.motorTorque = strengthCoefficient * Time.deltaTime * inputManager.Acceleration * speed;
+            }
+            else if (inputManager.Reverse > 0)
+            {
+                wheel.motorTorque = -strengthCoefficient * Time.deltaTime * inputManager.Reverse * speed;
+            }
+            wheel.wheelDampingRate = inputManager.wheelDampening;
         }
+
 
         foreach (WheelCollider wheel in steeringWheels)
         {
-            wheel.steerAngle = maxTurn * steering;
+            wheel.steerAngle = maxTurn * inputManager.Steering;
+            wheel.wheelDampingRate *= inputManager.wheelDampening;
         }
     }
 }
