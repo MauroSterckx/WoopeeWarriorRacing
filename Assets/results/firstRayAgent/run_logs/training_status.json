@@ -18,15 +18,24 @@
                 "auxillary_file_paths": [
                     "results\\firstRayAgent\\CarAgent\\CarAgent-128230.pt"
                 ]
+            },
+            {
+                "steps": 191155,
+                "file_path": "results\\firstRayAgent\\CarAgent\\CarAgent-191155.onnx",
+                "reward": null,
+                "creation_time": 1716669817.8178365,
+                "auxillary_file_paths": [
+                    "results\\firstRayAgent\\CarAgent\\CarAgent-191155.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 128230,
+            "steps": 191155,
             "file_path": "results\\firstRayAgent\\CarAgent.onnx",
             "reward": null,
-            "creation_time": 1716551335.0059779,
+            "creation_time": 1716669817.8178365,
             "auxillary_file_paths": [
-                "results\\firstRayAgent\\CarAgent\\CarAgent-128230.pt"
+                "results\\firstRayAgent\\CarAgent\\CarAgent-191155.pt"
             ]
         }
     },
