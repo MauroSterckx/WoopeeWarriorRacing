@@ -121,7 +121,7 @@ public class CarSelect : MonoBehaviour
         else
         {
             // map 2
-            SceneManager.LoadScene("Map2");
+            SceneManager.LoadScene("vierkantMap");
         }
     }
 }
