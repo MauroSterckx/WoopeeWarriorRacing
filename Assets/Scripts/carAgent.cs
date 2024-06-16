@@ -71,24 +71,24 @@ public class CarAgent : Agent
         // Target reached
         if (distanceToTarget < 0.5f)
         {
-            SetReward(20.0f);
+            SetReward(30.0f);
             EndEpisode();
         }
         // Collision with wall
         else if (hitwall)
         {
-            SetReward(-2f);
+            SetReward(-10f);
             EndEpisode();
         }
         // Fell off platform
         else if (distanceToTarget > 30f)
         {
-            SetReward(-2f);
+            SetReward(-10f);
         }
         // Fell below platform
         else if (this.transform.localPosition.y < 0)
         {
-            SetReward(-0.5f);
+            SetReward(-10f);
             EndEpisode();
         }
     }
