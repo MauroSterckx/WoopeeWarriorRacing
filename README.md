@@ -39,6 +39,10 @@ Bereid je voor op de ultieme race-ervaring en laat zien dat jij de beste Woopée
     - Alle informatie van de one-pager
     - Indien van toepassing: waar jullie afwijken van de one-pager en waarom
 
+## Controls VR
+
+het doel van onze vr controls is heel simpel. We willen de auto kunnen besturen met de joystick en knoppen van onze controller. De auto moet vooruit, achteruit, links en rechts kunnen gaan. Daarboven moet de auto ook kunnen remmen. Wij maken geen gebruik van een stuur maar puur van de joysticks.
+
 ## Resultaten
 In het begin van ons ontwikkeltraject hadden onze ML-Agents moeite om goed te presteren. We hebben behoorlijk wat gesukkeld met de initiële aanpak. Ons oorspronkelijke idee was om waypoints op de tracks te plaatsen en de agents een array te geven met de locaties van de transforms van die waypoints. Het doel was simpel: de agents moesten zo snel mogelijk naar de locatie van de transforms rijden. Helaas bleek deze aanpak niet effectief en stuitten we op diverse problemen.
 
