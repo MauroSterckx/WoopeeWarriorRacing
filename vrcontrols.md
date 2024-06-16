@@ -18,7 +18,7 @@ Dit is de basis setup van de auto. </br>
 ## scripts
 We hebben 2 scripts: ControllCar en PlayerInput (benaming is belangrijk) </br>
 ### PlayerInput
-´´´
+```
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
