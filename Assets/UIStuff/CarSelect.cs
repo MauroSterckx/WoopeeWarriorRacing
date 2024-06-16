@@ -115,6 +115,7 @@ public class CarSelect : MonoBehaviour
         if (toggle1.isOn)
         {
             // map 1
+            Debug.Log("gerbenScene");
             SceneManager.LoadScene("gerbenScene");
         }
         else
