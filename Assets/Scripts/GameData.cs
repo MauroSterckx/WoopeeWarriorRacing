@@ -7,4 +7,5 @@ public static class GameData
 {
     public static string Username;
     public static string CarColor;
+    public static int Placement;
 }
