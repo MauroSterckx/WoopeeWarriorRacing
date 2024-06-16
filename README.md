@@ -8,7 +8,9 @@ Elke race is een intense strijd om de overwinning, waarbij je reflexen en strate
 ## Methoden
 
 ### Installatie
-    - Installatie: enkel vermelden van de versies meegeven, geen uitleg over hoe je moet installeren, tenzij het over zaken gaat die niet in de cursus staan
+
+Installatie: 2022.3.10f1
+
 ### Verloop van spel
 Wanneer je Woopée Warrior Racing start, kom je op een prachtige UI terecht die je direct onderdompelt in de race-ervaring. Hier kun je verschillende keuzes maken om je race voor te bereiden:
 
@@ -49,15 +51,49 @@ Daarna besloten we over te stappen op een andere benadering door gebruik te make
 
 Om de prestaties verder te verbeteren, wilden we de agents sneller laten rijden. Dit bereikten we door een strafsysteem te implementeren: als een agent trager was dan zijn vorige keer, werd hij bestraft. Deze aanpak stimuleerde de agents om steeds efficiënter en sneller te worden, wat uiteindelijk leidde tot indrukwekkende resultaten op de verschillende tracks.
 
-    - Resultaten van de training met Tensorboard afbeeldingen
-    - Beschrijving van de Tensorboard grafieken
-    - Opvallende waarnemingen tijdens het trainen 
+### tensorboard
+
+![tensboard_afbeelding](./scr/tensorboard.png)
+
+De afbeelding die gebruikt wordt is van een agent die al standaardwerking had, toch merken we nog vele verschillen op kleine aanpassingen. Bij het analyseren van de tensorboard merken we op dat hij snel stijgt en dan ineens daalt, dit komt door aanpassingen aan het rewardsysteem. Bij deze training waren we ons aan het richten op het fine tunen van de agent, en waren we de reward zo aan het aanpassen dat de agent elke checkpoint moest halen. Dit had een duidelijk effect op de werking van onze agent.
+
+De grafieken zijn dus zeer divers, dit komt door de snel lerende agent en de terugkomende aanpassingen om hem nog beter te maken. Desondanks de diversiteit in de grafieken waren we zeer tevreden met het resultaat.
+
 ## Conclusie
-    - Eén zin die nog eens samenvat wat jullie hebben gedaan
-    - Kort overzicht resultaten (2 á 3 zinnen zonder cijfers te vernoemen)
-    - Een 'persoonlijke' visie op de resultaten, wat betekenen de resultaten nu eigenlijk
-    - Verbeteringen naar de toekomst toe
+
+### Samenvatting
+
+We hebben een single player VR racing game gemaakt, waarbij je kan racen tegen AI-bots.
+
+Wat hebben we nu concreet verwezenlijkt?
+
+We hebben een VR driving experience gebouwd waarbij je kan rijden a.d.h.v. je joysticks. In ons spel hebben we een agent gecreëerd die zich oriënteert met Raycast3D perception, en dus een mooie tegenstander vormt. Ten laatste hebben we een mooie UI gebouwd met leuke extra's om de speler een leuke game experience te bieden.
+
+### Persoonlijke visie
+
+De resulaten die we behaald hebben laten mooi zien dat we onze lessen konden samenbrengen in de praktijk en hierdoor een mooi spel konden realiseren. De mogelijke verbeteringen vinden vooral plaats in de ontwikkeling van de agent, en een paar kleine factoren in het spel. We hadden meerdere problemen met de originele werking van de agent zonder Raycast perception, dit hebben we dan later verandert wat een drastische impact op de vooruitgang die we boekten. 
 
 ## Bronvermelding
-    Je mag eventueel gebruik maken van de instructievideo's van deze cursus of naar de Obelix tutorial. Voor alle ander materiaal waar je gebruik van maakt en dat bestaat uit meer dan één regel aan code, verwijs je naar de oorspronkelijke bron op een gepaste wijze (APA-stijl). Een ontbrekende of incorrecte verwijzing wordt als plagiaat beschouwd.
-ZET BRONVERMELDING VOOR CHATGPT VOOR TE HELPEN MET DEZE README!!
+
+Nanousis Development. (n.d.). Pathfinding in Unity: Create a Basic Navigation System in C#. YouTube. Retrieved from https://www.youtube.com/watch?v=OQps_DfIep8&t=290s&ab_channel=NanousisDevelopment
+
+mrPCoding. (n.d.). Unity 2D Pathfinding: Create a Simple Navigation System in C#. YouTube. Retrieved from https://www.youtube.com/watch?v=bWrvUHI9j5U&list=PLKGJF9yNkmQZ1fBMGUwSEBSjBaIYjgFSs&index=2
+
+Unity Asset Store. (n.d.). Formula One Car. Retrieved from https://assetstore.unity.com/packages/3d/vehicles/land/formula-one-car-25693
+
+Unity Asset Store. (n.d.). Environment Track: Lowpoly Cartoon Props Mobile Free. Retrieved from https://assetstore.unity.com/packages/3d/props/environment-track-lowpoly-cartoon-props-mobile-free-211494
+
+Unity Asset Store. (n.d.). Simple Firework. Retrieved from https://assetstore.unity.com/packages/vfx/particles/simple-firework-217956
+
+mrPCoding. (n.d.). Unity 2D Pathfinding: Create a Simple Navigation System in C#. YouTube. Retrieved from https://www.youtube.com/watch?v=bWrvUHI9j5U&ab_channel=mrPCoding
+
+pabloslab. (n.d.). Unity: How to Create a Basic AI System. YouTube. Retrieved from https://www.youtube.com/watch?v=6Y1bAvRYqbU&list=PLhWBaV_gmpGXxscZr8PIcreyYkw8VlnKn&ab_channel=pabloslab
+
+ChatGPT. (n.d.). Retrieved from https://chatgpt.com/
+
+Unity Technologies. (n.d.). ML-Agents. GitHub. Retrieved from https://github.com/Unity-Technologies/ml-agents
+
+Bing Videos. (n.d.). Unity ML Agents. Retrieved from https://www.bing.com/videos/riverview/relatedvideo?q=unity+ml+agents&mid=946C4E35C3F85352FC92946C4E35C3F85352FC92&FORM=VIRE
+
+Unity Technologies. (n.d.). ML-Agents Overview. Retrieved from https://unity-technologies.github.io/ml-agents/ML-Agents-Overview/
+

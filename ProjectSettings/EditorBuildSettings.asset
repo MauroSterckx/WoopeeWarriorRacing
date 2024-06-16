@@ -4,7 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/gerbenScene.unity
+    guid: a4a4a789f2b92d2458be0762bfa6d8d4
+    path: Assets/Scenes/mauroScene.unity
+    guid: ee4481ae210bbcd4facb1e0296240ed6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b7720fed7adf68a40aae657eaf93781e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8b9e80a8ca4234a4a8d4ccfe2ff499c6, type: 2}
