@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CarSelect : MonoBehaviour
@@ -22,6 +25,11 @@ public class CarSelect : MonoBehaviour
     public TMP_InputField inputField;
     public TextMeshProUGUI outputText;
 
+    // Map
+    public Toggle toggle1;
+    public Toggle toggle2;
+
+    // Global stuff
     void Start()
     {
         // Als je de prefabs in het script hardcodeert, kun je ze hier toewijzen
@@ -60,5 +68,59 @@ public class CarSelect : MonoBehaviour
 
         // Pas de tekst van de uitvoer TextMeshPro Text UI-component aan
         outputText.text = inputText;
+    }
+    public void ToggleChanged(Toggle changedToggle)
+    {
+        if (changedToggle.isOn)
+        {
+            // Schakel de andere toggle uit
+            if (changedToggle == toggle1)
+            {
+                toggle2.isOn = false;
+                Debug.Log("toggle 1 is on");
+            }
+            else
+            {
+                toggle1.isOn = false;
+                Debug.Log("toggle 2 is on");
+            }
+
+            // Werk de output text bij met de ingevoerde tekst
+
+        }
+    }
+
+    public void Ready()
+    {
+        // User klikt op ready om game te starten
+
+        // Car
+        if (activePrefabIndex == 0)
+        {
+            GameData.CarColor = "RED";
+        }
+        if (activePrefabIndex == 1)
+        {
+            GameData.CarColor = "YELLOW";
+        }
+        else
+        {
+            GameData.CarColor = "BLUE";
+        }
+
+        // Username
+        GameData.Username = outputText.text;
+
+        // Map
+        if (toggle1.isOn)
+        {
+            // map 1
+            SceneManager.LoadScene("gerbenScene");
+        }
+        else
+        {
+            // map 2
+            SceneManager.LoadScene("Map2");
+        }
     }
 }
