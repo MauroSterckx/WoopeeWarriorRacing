@@ -98,7 +98,7 @@ public class RayAgent : Agent
             if (col.CompareTag("WALL"))
             {
                 Debug.Log("Hit a wall");
-                SetReward(-5f);
+                SetReward(-20f);
                 EndEpisode();
             }
             else if (col.CompareTag("wp"))
@@ -107,24 +107,16 @@ public class RayAgent : Agent
                 {
                     Debug.Log("Hit a waypoint");
                     hitWaypoints.Add(col.gameObject);
-                    SetReward(+0.1f);
+                    SetReward(+1f);
                     col.gameObject.SetActive(false); // Deactivate the waypoint
                 }
             }
             else if (col.CompareTag("Finish"))
             {
-                if (hitWaypoints.Count == waypoints.Length)
-                {
-                    float timeTaken = Time.time - episodeStartTime;
-                    SetReward(5f + (10f / timeTaken)); // Reward based on time taken to reach the finish
-                    EndEpisode();
-                }
-                else
-                {
-                    Debug.Log("Reached finish without hitting all waypoints");
-                    SetReward(-1f);
-                    EndEpisode();
-                }
+                float timeTaken = Time.time - episodeStartTime;
+                SetReward(15f + (30f / timeTaken)); // Reward based on time taken to reach the finish
+                EndEpisode();
+                
             }
         }
     }

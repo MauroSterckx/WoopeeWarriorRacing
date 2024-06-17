@@ -24,9 +24,8 @@ public class StartGame : MonoBehaviour
             if (color.Equals("YELLOW"))
                 renderer.material = materials[2];
         }
-
-        Pause(5);
     }
+
 
     private IEnumerator Pause(int p)
     {
