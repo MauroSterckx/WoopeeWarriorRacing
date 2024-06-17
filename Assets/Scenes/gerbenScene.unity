@@ -44470,6 +44470,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 475206f1335909f43998db1e3785b953, type: 2}
+    - target: {fileID: 6267529918764673639, guid: 62d38c3b81a175f4585f3bb99fca3071, type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8037794154235801043, guid: 62d38c3b81a175f4585f3bb99fca3071, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
